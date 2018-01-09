@@ -1,29 +1,13 @@
-# bootstraptemplate
-Template for Bootstrap 4, and JQuery 3.2
+# Local Weather App
 
-Include custom color definition on main.css file
+Project for the challenge *Show the local weather*  from [freeCodeCamp](https://www.freecodecamp.org).
 
-How to add a ssh key to github
+This project will make use of the API from [Free Code Camp Weather API](https://fcc-weather-api.glitch.me/). 
 
-Create the ssh key with the command
-```
-ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_rsa
-```
-https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
-https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/
+## Geolocation
+This project will use the *navigator.geolocation* object. More information about this topic, can be found on [Using geolocation](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation).
 
-How to fork your own repositories
+## Https server
+To test the project from my development workstation, i will use the *npm* package: [simple-https-server](https://www.npmjs.com/package/simple-https-server). Using https is a must to working with geolocation.
 
-https://www.tilcode.com/fork-your-own-repo-on-github/
-
-Create a new repository on github.com
-
-```
-git clone <repository_url>
-cd <repository_dir>
-git remote add upstream git@github.com:edramir18/bootstraptemplate.git
-git pull upstream master
-git push origin master
-```
+I recomend as well this package for http testing: [serve](https://www.npmjs.com/package/serve).
