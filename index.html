@@ -1,54 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" 
-        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" 
-        integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" 
-        crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/main.css" >
-    <!-- Fonts and Icons -->
-    <link rel="stylesheet" 
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Local Weather App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" 
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" 
+    integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" 
+    crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/main.css" >
+  <!-- Fonts and Icons -->
+  <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>    
-    <main class="container">
-        <h1>Initial Template</h1>
-        <div class="row">
-            <div class="col-sm-12">
-                <h2>Bootstrap Template with JQuery</h2>
-            </div>
+<body>
+  <div class="container">    
+    <div class="row">
+      <div class="col">
+        <h1>Local Weather App</h1>        
+      </div>
+    </div>    
+    <div class="row">
+      <div class="col">
+        <h5 id="localidad">
+          Your browser not support Geolocation
+        </h5>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <div class="card">
+          <div class="card-header bg-info">
+            Weather
+          </div>
+          <div class="card-body">              
+          </div>
         </div>
-    </main>
-    <footer class="footer">
-            <div class="container">
-                <div class="row justify-content-between">
-                    <div class="col-10">
-                        <span class="text-muted">&copy; 2018 Eduardo Ramirez</span>
-                    </div>
-                    <div class="col-2">
-                        <div class="btn-group">
-                            <a href="https://github.com/edramir18" class="btn btn-primary" target="_blank">
-                                <i class="fa fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>            
-            </div>
-        </footer>
+      </div>
+      <div class="col-6">
+        <div class="card">
+          <div class="card-header bg-info">
+            Temperature
+          </div>
+          <div class="card-body">            
+          </div>
+        </div>
+      </div>    
+    </div>    
+  </div>
+  <footer class="footer">
+    <div class="container">
+      <div class="row justify-content-between">
+        <div class="col-10">
+          <span class="text-muted">&copy; 2018 Eduardo Ramirez</span>
+        </div>
+        <div class="col-2">
+          <div class="btn-group">
+            <a href="https://github.com/edramir18/localweather" class="btn btn-primary" target="_blank">
+              <i class="fa fa-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>      
+    </div>
+  </footer>
 
-    <!-- Javascript Library -->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" 
-        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        crossorigin="anonymous">
-    </script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" 
-        integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" 
-        crossorigin="anonymous"></script>
-    <script src="js/main.js"></script>
+  <!-- Javascript Library -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" 
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" 
+    integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" 
+    crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
 
 </body>
 </html>

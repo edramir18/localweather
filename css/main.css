@@ -5,10 +5,6 @@
     --apple_core-color: #dcc7aa;
 }
 
-body {
-    color: white;
-    background-color: var(--apple_core-color);
-}
 
 /*
  * @Copyright from Bootstrap 4 documentation
