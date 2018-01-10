@@ -24,28 +24,32 @@ function convertCoordToCoordMin(position){
     return myPosition;
 }
 
+function positionSuccess(position){
+    const localidad = document.getElementById('localidad');
+    const myPosition = convertCoordToCoordMin(position);
+    const positionString = myPosition.latitude.grades + "°" +
+        myPosition.latitude.minutes + "'" + myPosition.latitude.symbol + 
+        " " + myPosition.longitude.grades + "°" +
+        myPosition.longitude.minutes + "'" + myPosition.longitude.symbol;    
+    
+}
+
+function positionError(){
+    const localidad = document.getElementById('localidad');
+    localidad.textContent = 'You browser not support GeoLocalization';
+    localidad.classList.add('font-italic');
+}
+
 $(document).ready( function() {
-    const localidad = document.getElementById('localidad');    
-    
-    const success = function(position) {
-        const myPosition = convertCoordToCoordMin(position);
-        localidad.textContent = myPosition.latitude.grades + "°" +
-            myPosition.latitude.minutes + "'" + myPosition.latitude.symbol + 
-            " " + myPosition.longitude.grades + "°" +
-            myPosition.longitude.minutes + "'" + myPosition.longitude.symbol;
-    };
-    const err = function () {
-        localidad.textContent = 'prueba';
-        localidad.classList.add('font-italic');
-    }
-    
+    const localidad = document.getElementById('localidad');
+        
     if (!localidad){
         return;
     }
     if (!navigator.geolocation){
-        err()
+        positionError()
         return;
     }
 
-    navigator.geolocation.getCurrentPosition(success, err);
+    navigator.geolocation.getCurrentPosition(positionSuccess, positionError);
 });
