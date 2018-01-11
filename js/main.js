@@ -27,8 +27,7 @@ function convertCoordToCoordMin(position){
         myPosition.longitude.minutes + "'" + myPosition.longitude.symbol;
     return myPosition;
 }
-function positionSuccess(position){
-    const localidad = document.getElementById('localidad');
+function positionSuccess(position){    
     const myPosition = convertCoordToCoordMin(position);
     const weatherAPiUrl = "https://fcc-weather-api.glitch.me/api/current?lon=" +
         position.coords.longitude + "&lat=" +
@@ -38,23 +37,21 @@ function positionSuccess(position){
             if(!response.ok){
                 throw new Error('Network response was not ok.');
             }
-            return response;
+            return response.json();
         })
-        .then(response => response.json())
         .then(json => {
             if (!json){
                 throw new Error('Api return no data.');
-            }
-            console.log(json);
-            console.log(json.main.temp);
+            }            
             const elm = document.querySelector('#weather img');
             const img = elm.cloneNode(true);
             img.setAttribute("src", json.weather[0].icon);
             elm.parentNode.replaceChild(img, elm);
             document.querySelector('#weather h6').textContent = json.weather[0].description;
-            localidad.textContent = json.name + " (" + json.sys.country + ") " + myPosition.text;
+            document.querySelector('#temperature h3').textContent = json.main.temp + " °C";
+            document.getElementById('localidad').innerHTML = json.name + " (" + json.sys.country + ") <small>" + myPosition.text + "</small>";
         })
-        .catch(error => {
+        .catch(error => {            
             console.log('There has been a problem with your fetch operation: ', error.message);
         });
 }
