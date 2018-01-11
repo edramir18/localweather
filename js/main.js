@@ -27,6 +27,11 @@ function convertCoordToCoordMin(position){
         myPosition.longitude.minutes + "'" + myPosition.longitude.symbol;
     return myPosition;
 }
+
+function roundToTwo(num) {    
+    return +(Math.round(num + "e+2")  + "e-2");
+}
+
 function positionSuccess(position){    
     const myPosition = convertCoordToCoordMin(position);
     const weatherAPiUrl = "https://fcc-weather-api.glitch.me/api/current?lon=" +
@@ -47,9 +52,20 @@ function positionSuccess(position){
             const img = elm.cloneNode(true);
             img.setAttribute("src", json.weather[0].icon);
             elm.parentNode.replaceChild(img, elm);
-            document.querySelector('#weather h6').textContent = json.weather[0].description;
+            document.querySelector('#weather h4').textContent = json.weather[0].description;
             document.querySelector('#temperature h3').textContent = json.main.temp + " °C";
-            document.getElementById('localidad').innerHTML = json.name + " (" + json.sys.country + ") <small>" + myPosition.text + "</small>";
+            document.getElementById('localidad').innerHTML = json.name + " (" + json.sys.country 
+                + ") <small>" + myPosition.text + "</small>";
+
+            document.querySelector('.switch input').addEventListener('click', event => {
+                const celsius = json.main.temp + " °C";
+                const fahrenheit = roundToTwo(json.main.temp * 1.8 + 5) + " °F";
+                if(event.target.checked){
+                    document.querySelector('#temperature h3').textContent = celsius;
+                } else {
+                    document.querySelector('#temperature h3').textContent = fahrenheit;
+                }
+            });
         })
         .catch(error => {            
             console.log('There has been a problem with your fetch operation: ', error.message);
